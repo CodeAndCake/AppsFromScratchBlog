@@ -2146,3 +2146,18 @@ body {
 		height: 0;
 	}
 }
+
+/*---------------- AIMEE CSS WARNING -------------------*/
+
+.main-image 
+{
+	height: 30rem;
+	background-size: cover;
+
+}
+
+.main-image h1
+{
+	padding-top: 9rem;
+    padding-left: 22rem;
+}
