@@ -11,7 +11,7 @@
                 <div class="archive-news-post">
                     <span>
                     
-                    <h6><?php the_category(', ') ?></h6>
+                    <!-- <h6><?php the_category(', ') ?></h6> -->
                     
                     <h4>
                     	<a href="<?php the_permalink(); ?>">
