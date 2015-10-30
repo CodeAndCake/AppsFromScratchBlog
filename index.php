@@ -17,7 +17,7 @@ get_header(); ?>
         
 	<header class="page-entry-header">
     	<div class="grid grid-pad">
-        	<div class="col-1-1">
+        	<div class="col-1-1 main-image" style="background-image: url('https://images.unsplash.com/uploads/141103282695035fa1380/95cdfeef?ixlib=rb-0.3.5&q=80&fm=jpg&s=8636f50d12aac530aa8ebad29808c32e')">
 				<h1 class="entry-title">
 					<?php echo esc_html( get_theme_mod( 'luna_blog_title', esc_html__( 'The Blog', 'luna' ) )) ?>
                 </h1> 
