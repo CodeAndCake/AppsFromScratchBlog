@@ -55,7 +55,16 @@ get_header(); ?>
 <section id="page-content-container" class="blog-post-archive">
         
 
+    <?php 
 
+        // let's grab the banner image before we run the query for cat=8
+        // bloody WordPress queries LOL...
+
+        $bannerImage = get_field('banner_image');
+
+        // showMeTheGoods($bannerImage);
+
+    ?>
     
     <div id="primary" class="content-area">
         <main id="main" class="site-main" role="main">
@@ -71,9 +80,11 @@ get_header(); ?>
 
         if ( have_posts() ) : ?>
 
-            <?php /* Start the Loop */ ?>
+            <div class="grid grid-pad">
+
             <?php while ( have_posts() ) : the_post(); ?>
 
+                <div class="col-1-2">
                 <?php
                     /* Include the Post-Format-specific template for the content.
                      * If you want to override this in a child theme, then include a file
@@ -81,8 +92,11 @@ get_header(); ?>
                      */
                     get_template_part( 'content', get_post_format() );
                 ?>
+                </div>
 
             <?php endwhile; ?>
+
+            </div>
 
             <?php the_posts_navigation(); ?>
 
@@ -92,9 +106,19 @@ get_header(); ?>
 
         <?php endif; ?>
 
+            <!-- WORKSHEETS FEATURE -->
+            
+            <div class="grid grid-pad">
+                <div class="col-1-1">
+                   <div class="content">
+                        <div class="banner-image" style="background-image: url('<?php echo $bannerImage['url']; ?>');">
+                        </div>
+                   </div>
+                </div>
+            </div>
+
         </main><!-- #main -->
     </div><!-- #primary -->
-
 
 </section>
 

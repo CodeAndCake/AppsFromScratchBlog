@@ -2161,3 +2161,10 @@ body {
 	padding-top: 9rem;
     padding-left: 22rem;
 }
+
+.banner-image
+{
+	height: 25rem;
+	background-size: cover;
+	width: 100%;
+}
