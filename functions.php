@@ -5,6 +5,16 @@
  * @package luna
  */
 
+
+// function to wrap the "spit out a variable" command
+function showMeTheGoods($theGoods)
+{
+	echo '<pre>';
+	print_r($theGoods);
+	echo '</pre>';
+}
+
+
 /**
  * Set the content width based on the theme's design and stylesheet.
  */
