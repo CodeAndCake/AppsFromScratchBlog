@@ -61,6 +61,10 @@ get_header(); ?>
         // bloody WordPress queries LOL...
 
         $bannerImage = get_field('banner_image');
+        $bannerTitle = get_field('banner_title');
+        $bannerSubtitle = get_field('banner_subtitle');
+        $bannerLink  = get_field('banner_link');
+        $buttonLabel = get_field('banner_button_label');
 
         // showMeTheGoods($bannerImage);
 
@@ -71,8 +75,8 @@ get_header(); ?>
 
         <?php 
 
-        /* get all the posts which category id is 1 */
-        query_posts('cat=8'); 
+            /* get all the posts which category id is 8 */
+            query_posts('cat=8&posts_per_page=2'); 
 
         ?>
 
@@ -98,13 +102,18 @@ get_header(); ?>
 
             </div>
 
-            <?php the_posts_navigation(); ?>
-
         <?php else : ?>
 
             <?php get_template_part( 'content', 'none' ); ?>
 
         <?php endif; ?>
+
+        <?php 
+
+            // Reset Query
+            wp_reset_query();
+
+        ?>    
 
             <!-- WORKSHEETS FEATURE -->
             
@@ -112,10 +121,61 @@ get_header(); ?>
                 <div class="col-1-1">
                    <div class="content">
                         <div class="banner-image" style="background-image: url('<?php echo $bannerImage['url']; ?>');">
+                            <div class="grid grid-pad">        
+                                <div class="col-1-1">
+                                    <h1><?php echo $bannerTitle; ?></h1>
+                                    <h2><?php echo $bannerSubtitle; ?></h2>
+                                    <a href="<?php echo $bannerLink; ?>" class="featured-link"><button><?php echo $buttonLabel; ?></button></a>
+                                </div>
+                            </div>
                         </div>
                    </div>
                 </div>
             </div>
+
+
+
+        <?php 
+
+            /* get all the posts which category id is 3 */
+            query_posts('cat=3&posts_per_page=2'); 
+
+        ?>
+
+        <?php
+
+        if ( have_posts() ) : ?>
+
+            <div class="grid grid-pad">
+
+            <?php while ( have_posts() ) : the_post(); ?>
+
+                <div class="col-1-2">
+                <?php
+                    /* Include the Post-Format-specific template for the content.
+                     * If you want to override this in a child theme, then include a file
+                     * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+                     */
+                    get_template_part( 'content', get_post_format() );
+                ?>
+                </div>
+
+            <?php endwhile; ?>
+
+            </div>
+
+        <?php else : ?>
+
+            <?php get_template_part( 'content', 'none' ); ?>
+
+        <?php endif; ?>
+
+        <?php 
+
+            // Reset Query
+            wp_reset_query();
+
+        ?> 
 
         </main><!-- #main -->
     </div><!-- #primary -->
