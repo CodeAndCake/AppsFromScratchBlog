@@ -895,6 +895,7 @@ ul.social-media-icons {
 	background-size: cover;
 	padding: 120px 0;
 	text-align: center;
+	margin-bottom: 4rem;
 }
 
 #home-hero h1 {
@@ -902,7 +903,7 @@ ul.social-media-icons {
 	line-height: 42px;
 }
 
-#home-hero h1, #home-hero p, #home-hero button {
+#home-hero h1, #home-hero p, #home-hero button, .banner-image h1, .banner-image h2, .banner-image a.featured-link {
 	max-width: 700px;
 	margin: 0.75em auto;
 }
@@ -1860,7 +1861,7 @@ body {
 
 [class*='col-'] {
 	float: left;
-	padding-right: 35px; /* column-space */
+	padding-right: 50px; /* column-space */
 }
 
 .grid {
@@ -1879,7 +1880,7 @@ body {
 
 .grid-pad {
 	padding-top: 20px;
-	padding-left: 35px; /* grid-space to left */
+	padding-left: 50px; /* grid-space to left */
 	padding-right: 0px; /* grid-space to right: (grid-space-left - column-space) e.g. 20px-20px=0 */
 }
 
@@ -2151,7 +2152,7 @@ body {
 
 .main-image 
 {
-	height: 30rem;
+	height: 32rem;
 	background-size: cover;
 
 }
@@ -2164,7 +2165,8 @@ body {
 
 .banner-image
 {
-	height: 25rem;
+	height: 30rem;
 	background-size: cover;
 	width: 100%;
+	margin: 6rem 0;
 }
