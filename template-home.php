@@ -252,11 +252,11 @@ get_header(); ?>
                     		<?php dynamic_sidebar('default-home-widget-area'); ?>
                             
                         </div><!-- .col -->
-                    </div><!-- .grid -->
-                </div><!-- .home-widget -->
+                  <!--   </div> --><!-- .grid -->
+                <!-- </div> --><!-- .home-widget -->
   <!--               
             <?php endif; ?>
-        <?php endif; ?> --> -->
+        <?php endif; ?> -->
 
 
 <?php get_footer(); ?>
