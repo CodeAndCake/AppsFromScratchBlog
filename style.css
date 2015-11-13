@@ -904,8 +904,9 @@ ul.social-media-icons {
 }
 
 #home-hero h1 {
-	font-size: 5rem;
-	line-height: 5rem;
+	font-size: 7rem;
+	line-height: 7rem;
+	font-weight: 400;
 }
 
 #home-hero h1, #home-hero p, #home-hero button, .banner-image h1, .banner-image h2, .banner-image a.featured-link {
@@ -2331,4 +2332,12 @@ body {
 .blog-feed-mini .col-1-2
 {
 	padding: 0;
+}
+
+/*   OUTRO   */
+
+.outro h2
+{
+	text-align: center;
+	margin-top: 4rem;
 }
