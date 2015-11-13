@@ -75,30 +75,22 @@ get_header(); ?>
 
 
 
-        <!-- INTRO -->
+<!-- INTRO -->       
 
-
-             
-        <div class="grid grid-pad">
-            <div class="col-1-1">
-               <div class="content">
-                    <div class="intro">
-                        <div class="grid grid-pad">        
-                            <div class="col-1-1">
-                                <h1><?php echo get_field('intro_greeting');?></h1>
-                                <h3><?php echo get_field('intro_blurb'); ?></h3>
-                                <!-- <a href="<?php echo $bannerLink; ?>" class="featured-link"><button><?php echo $buttonLabel; ?></button></a> -->
-                            </div>
-                        </div>
-                    </div>
-               </div>
+        <div class="intro">
+            <div class="grid grid-pad">        
+                <div class="col-1-1">
+                    <h1><?php echo get_field('intro_greeting');?></h1>
+                    <h3><?php echo get_field('intro_blurb'); ?></h3>
+                    <!-- <a href="<?php echo $bannerLink; ?>" class="featured-link"><button><?php echo $buttonLabel; ?></button></a> -->
+                </div>
             </div>
         </div>
 
 
 
-        <!-- INFO PANELS -->
 
+<!-- INFO PANELS -->
 
         <div class="info-panels">
 
@@ -116,37 +108,12 @@ get_header(); ?>
             ?>
 
                 <div class="grid grid-pad single-info-panel">
-
-                    <?php if ($isEven) { ?>
-
-                        <!-- I'm in an even row -->
-                        <div class="col-1-2">
-                            <div class="info-panel-blurb">
+                        <div class="col-1-2 info-panel-blurb">    
                                 <h1><?php echo get_sub_field('panel_number');?></h1>
                                 <?php echo get_sub_field('info_panel_text');?>
-                            </div>
                         </div>
-                        <div class="col-1-2">
-                            <div class="info-panel-image" style="background-image: url('<?php echo $infoPanelImage['url'] ?>');">
-                            </div>
+                        <div class="col-1-2 info-panel-image" style="background-image: url('<?php echo $infoPanelImage['url'] ;?>');">
                         </div>
-
-                    <?php } else { ?>
-
-                        <!-- I'm in an odd row -->
-                        <div class="col-1-2">
-                            <div class="info-panel-image" style="background-image: url('<?php echo $infoPanelImage['url'] ?>');">
-                            </div>
-                        </div>
-                        <div class="col-1-2">
-                            <div class="info-panel-blurb">
-                                <h1><?php echo get_sub_field('panel_number');?></h1>
-                                <?php echo get_sub_field('info_panel_text');?>
-                            </div>
-                        </div>
-
-                    <?php } ?>
-
                 </div>
 
             <?php 
@@ -155,20 +122,54 @@ get_header(); ?>
             ?>
 
             <?php endif; ?>
-
-
-
         </div>
 
+<!-- TESTIMONIALS -->
 
+    <div class="testimonials">
+        <div class="grid grid-pad">        
+            <div class="col-1-1">
+                <div class="section-intro">
+                    <h1><?php echo get_field('section_1_heading');?></h1>
+                </div>
+            </div>
+        </div>
 
-        <!-- BLOG -->
+        <div class="grid grid-pad">
+
+            <?php if( have_rows('testimonial_profiles') ): ?>
+
+                <?php while( have_rows('testimonial_profiles') ): the_row(); 
+
+                    $userPic = get_sub_field('user_pic');
+                    $userQuote = get_sub_field('user_quote');
+
+                ?>
+
+                    <div class="col-1-4">
+                       <div class="user-pic" style="background-image: url('<?php echo $userPic['url'] ; ?>');"></div>
+                       <!-- quote -->
+                       <div class="user-quote">
+                       <?php echo $userQuote ; ?>
+                       </div>
+                    </div>
+
+                <?php endwhile; ?>
+
+            <?php endif; ?>
+            
+        </div>
+    </div>
+
+<!-- BLOG -->
+
+    <div class="blog-feed-mini">
 
         <div class="grid grid-pad">        
             <div class="col-1-1">
                 <div class="section-intro">
-                    <h1><?php echo get_field('section_heading');?></h1>
-                    <h3><?php echo get_field('section_blurb'); ?></h3>
+                    <h1><?php echo get_field('section_2_heading');?></h1>
+                    <h3><?php echo get_field('section_2_blurb'); ?></h3>
                     <!-- <a href="<?php echo $bannerLink; ?>" class="featured-link"><button><?php echo $buttonLabel; ?></button></a> -->
                 </div>
             </div>
@@ -185,19 +186,25 @@ get_header(); ?>
 
         if ( have_posts() ) : ?>
 
+            <div class="grid grid-pad">
 
-            <?php while ( have_posts() ) : the_post(); ?>
+                <?php while ( have_posts() ) : the_post(); ?>
 
-                <?php
-                    /* Include the Post-Format-specific template for the content.
-                     * If you want to override this in a child theme, then include a file
-                     * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-                     */
-                    get_template_part( 'content', get_post_format() );
-                ?>
+                    <div class="col-1-2">
 
-            <?php endwhile; ?>
+                        <?php
+                            /* Include the Post-Format-specific template for the content.
+                             * If you want to override this in a child theme, then include a file
+                             * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+                             */
+                            get_template_part( 'content', get_post_format() );
+                        ?>
 
+                    </div>
+
+                <?php endwhile; ?>
+
+            </div>
 
         <?php else : ?>
 
@@ -212,23 +219,6 @@ get_header(); ?>
 
         ?>    
 
-        <!-- WORKSHEETS FEATURE -->
-        
-        <div class="grid grid-pad">
-            <div class="col-1-1">
-               <div class="content">
-                    <div class="banner-image" style="background-image: url('<?php echo $bannerImage['url']; ?>');">
-                        <div class="grid grid-pad">        
-                            <div class="col-1-1">
-                                <h1><?php echo $bannerTitle; ?></h1>
-                                <h2><?php echo $bannerSubtitle; ?></h2>
-                                <a href="<?php echo $bannerLink; ?>" class="featured-link"><button><?php echo $buttonLabel; ?></button></a>
-                            </div>
-                        </div>
-                    </div>
-               </div>
-            </div>
-        </div>
 
 
 
@@ -244,17 +234,25 @@ get_header(); ?>
         if ( have_posts() ) : ?>
 
 
-            <?php while ( have_posts() ) : the_post(); ?>
+            <div class="grid grid-pad">
 
-                <?php
-                    /* Include the Post-Format-specific template for the content.
-                     * If you want to override this in a child theme, then include a file
-                     * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-                     */
-                    get_template_part( 'content', get_post_format() );
-                ?>
+                <?php while ( have_posts() ) : the_post(); ?>
 
-            <?php endwhile; ?>
+                    <div class="col-1-2">
+
+                        <?php
+                            /* Include the Post-Format-specific template for the content.
+                             * If you want to override this in a child theme, then include a file
+                             * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+                             */
+                            get_template_part( 'content', get_post_format() );
+                        ?>
+
+                    </div>
+
+                <?php endwhile; ?>
+
+            </div>
 
 
         <?php else : ?>
@@ -269,10 +267,32 @@ get_header(); ?>
             wp_reset_query();
 
         ?> 
+    </div>
+
 
         </main><!-- #main -->
     </div><!-- #primary -->
-
 </section>
+
+
+<!-- WORKSHEETS OPT-IN -->
+
+    <section class="opt-in">
+        <div class="grid grid-pad">
+            <div class="col-1-1">
+               <div class="content">
+                    <div class="banner-image" style="background-image: url('<?php echo $bannerImage['url']; ?>');">
+                        <div class="grid grid-pad">        
+                            <div class="col-1-1">
+                                <h1><?php echo $bannerTitle; ?></h1>
+                                <h2><?php echo $bannerSubtitle; ?></h2>
+                                <a href="<?php echo $bannerLink; ?>" class="featured-link"><button><?php echo $buttonLabel; ?></button></a>
+                            </div>
+                        </div>
+                    </div>
+               </div>
+            </div>
+        </div>
+    </section>
 
 <?php get_footer(); ?>
