@@ -73,6 +73,105 @@ get_header(); ?>
     <div id="primary" class="content-area">
         <main id="main" class="site-main" role="main">
 
+
+
+        <!-- INTRO -->
+
+
+             
+        <div class="grid grid-pad">
+            <div class="col-1-1">
+               <div class="content">
+                    <div class="intro">
+                        <div class="grid grid-pad">        
+                            <div class="col-1-1">
+                                <h1><?php echo get_field('intro_greeting');?></h1>
+                                <h3><?php echo get_field('intro_blurb'); ?></h3>
+                                <!-- <a href="<?php echo $bannerLink; ?>" class="featured-link"><button><?php echo $buttonLabel; ?></button></a> -->
+                            </div>
+                        </div>
+                    </div>
+               </div>
+            </div>
+        </div>
+
+
+
+        <!-- INFO PANELS -->
+
+
+        <div class="info-panels">
+
+            <?php if( have_rows('info_panel') ): ?>
+
+            <?php 
+
+                $rowIndex = 0;
+                
+                while( have_rows('info_panel') ): the_row(); 
+
+                $isEven = $rowIndex % 2;
+                $infoPanelImage = get_sub_field('info_panel_image');
+
+            ?>
+
+                <div class="grid grid-pad single-info-panel">
+
+                    <?php if ($isEven) { ?>
+
+                        <!-- I'm in an even row -->
+                        <div class="col-1-2">
+                            <div class="info-panel-blurb">
+                                <?php echo get_sub_field('info_panel_text');?>
+                            </div>
+                        </div>
+                        <div class="col-1-2">
+                            <div class="info-panel-image" style="background-image: url('<?php echo $infoPanelImage['url'] ?>');">
+                            </div>
+                        </div>
+
+                    <?php } else { ?>
+
+                        <!-- I'm in an odd row -->
+                        <div class="col-1-2">
+                            <div class="info-panel-image" style="background-image: url('<?php echo $infoPanelImage['url'] ?>');">
+                            </div>
+                        </div>
+                        <div class="col-1-2">
+                            <div class="info-panel-blurb">
+                                <?php echo get_sub_field('info_panel_text');?>
+                            </div>
+                        </div>
+
+                    <?php } ?>
+
+                </div>
+
+            <?php 
+                $rowIndex++;
+                endwhile;  
+            ?>
+
+            <?php endif; ?>
+
+
+
+        </div>
+
+
+
+        <!-- BLOG -->
+
+        <div class="grid grid-pad">        
+            <div class="col-1-1">
+                <div class="section-intro">
+                    <h1><?php echo get_field('section_heading');?></h1>
+                    <h3><?php echo get_field('section_blurb'); ?></h3>
+                    <!-- <a href="<?php echo $bannerLink; ?>" class="featured-link"><button><?php echo $buttonLabel; ?></button></a> -->
+                </div>
+            </div>
+        </div>
+
         <?php 
 
             /* get all the posts which category id is 8 */
@@ -84,11 +183,9 @@ get_header(); ?>
 
         if ( have_posts() ) : ?>
 
-            <div class="grid grid-pad">
 
             <?php while ( have_posts() ) : the_post(); ?>
 
-                <div class="col-1-2">
                 <?php
                     /* Include the Post-Format-specific template for the content.
                      * If you want to override this in a child theme, then include a file
@@ -96,11 +193,9 @@ get_header(); ?>
                      */
                     get_template_part( 'content', get_post_format() );
                 ?>
-                </div>
 
             <?php endwhile; ?>
 
-            </div>
 
         <?php else : ?>
 
@@ -115,23 +210,23 @@ get_header(); ?>
 
         ?>    
 
-            <!-- WORKSHEETS FEATURE -->
-            
-            <div class="grid grid-pad">
-                <div class="col-1-1">
-                   <div class="content">
-                        <div class="banner-image" style="background-image: url('<?php echo $bannerImage['url']; ?>');">
-                            <div class="grid grid-pad">        
-                                <div class="col-1-1">
-                                    <h1><?php echo $bannerTitle; ?></h1>
-                                    <h2><?php echo $bannerSubtitle; ?></h2>
-                                    <a href="<?php echo $bannerLink; ?>" class="featured-link"><button><?php echo $buttonLabel; ?></button></a>
-                                </div>
+        <!-- WORKSHEETS FEATURE -->
+        
+        <div class="grid grid-pad">
+            <div class="col-1-1">
+               <div class="content">
+                    <div class="banner-image" style="background-image: url('<?php echo $bannerImage['url']; ?>');">
+                        <div class="grid grid-pad">        
+                            <div class="col-1-1">
+                                <h1><?php echo $bannerTitle; ?></h1>
+                                <h2><?php echo $bannerSubtitle; ?></h2>
+                                <a href="<?php echo $bannerLink; ?>" class="featured-link"><button><?php echo $buttonLabel; ?></button></a>
                             </div>
                         </div>
-                   </div>
-                </div>
+                    </div>
+               </div>
             </div>
+        </div>
 
 
 
@@ -146,11 +241,9 @@ get_header(); ?>
 
         if ( have_posts() ) : ?>
 
-            <div class="grid grid-pad">
 
             <?php while ( have_posts() ) : the_post(); ?>
 
-                <div class="col-1-2">
                 <?php
                     /* Include the Post-Format-specific template for the content.
                      * If you want to override this in a child theme, then include a file
@@ -158,11 +251,9 @@ get_header(); ?>
                      */
                     get_template_part( 'content', get_post_format() );
                 ?>
-                </div>
 
             <?php endwhile; ?>
 
-            </div>
 
         <?php else : ?>
 
