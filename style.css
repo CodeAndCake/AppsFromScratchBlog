@@ -969,7 +969,7 @@ ul.social-media-icons {
 
 .home-news-post, .archive-news-post {
 	height: 400px;
-	display: table;
+	/*display: table;*/
 }
 
 .home-news-post span, .archive-news-post span {
@@ -991,7 +991,7 @@ ul.social-media-icons {
 	background: #f1f1f1;
 	padding-top: 20px; 
 	font-size: 18px; 
-	margin-top: 6rem;
+	/*margin-top: 6rem;*/
 } 
 
 .site-footer h5 {
@@ -1098,8 +1098,8 @@ h3.footer-contact-title {
 
 .blog-post-archive article {
 	background: #fff;
-	border-bottom: 1px solid #ededed;
-	padding: 20px 0 40px;
+/*	border-bottom: 1px solid #ededed;
+	padding: 20px 0 40px;*/
 	margin-bottom: 0;
 	-webkit-transition: ease-in-out 0.2s;
 	-moz-transition: ease-in-out 0.2s;
@@ -2156,38 +2156,9 @@ body {
 
 /*---------------- AIMEE CSS WARNING -------------------*/
 
-.main-image 
-{
-	height: 32rem;
-	background-size: cover;
 
-}
 
-.main-image h1
-{
-	padding-top: 9rem;
-    padding-left: 22rem;
-}
-
-.banner-image
-{
-	height: 30rem;
-	background-size: cover;
-	width: 100%;
-	margin: 8rem 0;
-	text-align: center;
-}
-
-.banner-image .col-1-1
-{
-	margin-top: 6rem;
-}
-
-.intro
-{
-	margin: 10rem auto;
-
-}
+/*     INTRO AND SECTION INTRO    */
 
 .intro h1
 {
@@ -2200,6 +2171,24 @@ body {
 	text-align: center;
 	font-size: 5rem;
 }
+
+.intro,
+.section-intro
+{
+	margin-top: 12rem;
+	margin-bottom: 7rem;
+}
+
+.intro h3,
+.section-intro h3
+{
+	padding: 0 15rem;
+}
+
+
+
+
+/*     INFO PANEL     */
 
 .info-panel-blurb
 {
@@ -2218,33 +2207,19 @@ body {
     background-size: cover;
 }
 
-/*.info-panels .info-panel div:first-child 
-{
-    left: 50%;
-}
 
-.info-panels .info-panel div:last-child 
-{
-    right: 50%;
-}
-*/
-
-
-/*
-.single-info-panel:nth-child(n+3)
+.single-info-panel:nth-child(even) .info-panel-blurb
 {
 	left: 50%;
+	position: relative;
 }
 
-.single-info-panel:nth-child(n+4)
+.single-info-panel:nth-child(even) .info-panel-image
 {
 	right: 50%;
-}*/
+	position: relative;
+}
 
-/*.info-panels
-{
-	margin-bottom: 10rem;
-}*/
 
 .grid-pad.single-info-panel
 {
@@ -2267,9 +2242,93 @@ body {
 	padding: 0 7rem;
 }
 
-.section-intro
+
+
+
+/*     OPT-IN PRE-FOOTER    */
+
+ .opt-in .grid-pad,
+ .opt-in .col-1-1
+ {
+ 	padding: 0;
+ }
+
+ .opt-in .grid
+ {
+ 	max-width: 2000px;
+ 	margin-top: 12rem;
+ }
+
+.banner-image
 {
-	margin-top: 12rem;
-	margin-bottom: 7rem;
+	height: 21rem;
+	background-size: cover;
+	width: 100%;
+	/*margin: 8rem 0;*/
+	text-align: center;
 }
 
+.banner-image .col-1-1
+{
+	margin-top: 3rem;
+}
+
+
+
+
+/*     TESTIMONIALS     */
+ .user-pic
+ {
+ 	height: 20vw;
+ 	width: 20vw;
+ 	border-radius: 200px;
+ 	background-size: cover;
+ }
+
+ .user-quote
+ {
+ 	width: 20vw;
+ 	height: auto;
+ 	margin-top: 2rem;
+ }
+
+
+
+
+ /*     BLOG MINI-FEED     */
+
+ .archive-news-post
+ {
+ 	position: relative;
+ 	background-size: cover;
+ }
+
+ .archive-news-post h2
+ {
+ 	position: absolute;
+ 	font-size: 3rem;
+ 	padding: 7rem 7rem;
+
+ }
+
+ .archive-news-post h2 a
+ {
+ 	color: white;
+ 	height: 100%;
+ }
+
+ .layer
+ {
+ 	background-color: rgba(248, 247, 216, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+ }
+
+.blog-feed-mini .grid-pad,
+.blog-feed-mini .col-1-2
+{
+	padding: 0;
+}
