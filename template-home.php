@@ -270,6 +270,16 @@ get_header(); ?>
     </div>
 
 
+<!-- OUTRO -->       
+
+        <div class="outro">
+            <div class="grid grid-pad">        
+                <div class="col-1-1">
+                    <h2><?php echo get_field('outro');?></h2>
+                </div>
+            </div>
+        </div>
+
         </main><!-- #main -->
     </div><!-- #primary -->
 </section>
