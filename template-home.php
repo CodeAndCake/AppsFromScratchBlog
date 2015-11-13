@@ -122,6 +122,7 @@ get_header(); ?>
                         <!-- I'm in an even row -->
                         <div class="col-1-2">
                             <div class="info-panel-blurb">
+                                <h1><?php echo get_sub_field('panel_number');?></h1>
                                 <?php echo get_sub_field('info_panel_text');?>
                             </div>
                         </div>
@@ -139,6 +140,7 @@ get_header(); ?>
                         </div>
                         <div class="col-1-2">
                             <div class="info-panel-blurb">
+                                <h1><?php echo get_sub_field('panel_number');?></h1>
                                 <?php echo get_sub_field('info_panel_text');?>
                             </div>
                         </div>
