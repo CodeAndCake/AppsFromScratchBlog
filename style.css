@@ -321,7 +321,7 @@ h6 {
 
 h1 { font-size: 36px; line-height: 40px; }
 h2 { font-size: 32px; line-height: 36px; }
-h3 { font-size: 28px; line-height: 32px; }
+h3 { font-size: 28px; line-height: 32px; font-weight: 400; }
 h4 { font-size: 24px; line-height: 28px; }
 h5 { font-size: 20px; line-height: 24px; }
 h6 { font-size: 16px; line-height: 20px; }
@@ -2185,7 +2185,7 @@ body {
 
 .intro
 {
-	margin: 5rem auto;
+	margin: 10rem auto;
 
 }
 
@@ -2210,7 +2210,7 @@ body {
 
 .info-panel-image
 {
-	height: 380px;
+	height: 400px;
     margin: 0 auto;
     display: block;
     background: #ccc;
@@ -2230,7 +2230,7 @@ body {
 */
 
 
-
+/*
 .single-info-panel:nth-child(n+3)
 {
 	left: 50%;
@@ -2239,5 +2239,37 @@ body {
 .single-info-panel:nth-child(n+4)
 {
 	right: 50%;
+}*/
+
+/*.info-panels
+{
+	margin-bottom: 10rem;
+}*/
+
+.grid-pad.single-info-panel
+{
+	padding: 0;
+}
+
+.single-info-panel .col-1-2
+{
+	padding: 0px;
+}
+
+.info-panel-blurb h1
+{
+	font-size: 7rem;
+    padding: 7rem 7rem 0;
+}
+
+.info-panel-blurb p
+{
+	padding: 0 7rem;
+}
+
+.section-intro
+{
+	margin-top: 12rem;
+	margin-bottom: 7rem;
 }
 
