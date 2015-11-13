@@ -158,6 +158,9 @@ function luna_scripts() {
 	
 	wp_enqueue_style( 'luna-font-awesome', get_template_directory_uri() . '/fonts/font-awesome.css' ); 
 
+	wp_enqueue_style( 'etica', get_template_directory_uri() . '/fonts/etica-ttf.css' );
+	wp_enqueue_style( 'etica-light', get_template_directory_uri() . '/fonts/etica-light-ttf.css' ); 
+
 	wp_enqueue_style( 'luna-column-clear', get_template_directory_uri() . '/css/mt-column-clear.css' );
 
 	wp_enqueue_script( 'luna-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );

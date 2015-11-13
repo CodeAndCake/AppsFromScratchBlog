@@ -313,6 +313,7 @@ h3,
 h4,
 h5,
 h6 {
+  	font-weight: 700;
 	letter-spacing: -0.025em;
 	margin-top: 0;
 	clear: both;
@@ -903,8 +904,8 @@ ul.social-media-icons {
 }
 
 #home-hero h1 {
-	font-size: 40px;
-	line-height: 42px;
+	font-size: 5rem;
+	line-height: 5rem;
 }
 
 #home-hero h1, #home-hero p, #home-hero button, .banner-image h1, .banner-image h2, .banner-image a.featured-link {
@@ -990,6 +991,7 @@ ul.social-media-icons {
 	background: #f1f1f1;
 	padding-top: 20px; 
 	font-size: 18px; 
+	margin-top: 6rem;
 } 
 
 .site-footer h5 {
@@ -1085,7 +1087,7 @@ h3.footer-contact-title {
 }
 
 .entry-content-wrapper {
-	background: #f9f9f9;
+	/*background: #f9f9f9;*/
 	width: 100%;
 	padding-bottom: 20px;
 }
@@ -2180,3 +2182,62 @@ body {
 {
 	margin-top: 6rem;
 }
+
+.intro
+{
+	margin: 5rem auto;
+
+}
+
+.intro h1
+{
+	text-align: center;
+	font-size: 7rem;
+}
+
+.section-intro h1
+{
+	text-align: center;
+	font-size: 5rem;
+}
+
+.info-panel-blurb
+{
+	height: 400px;
+    display: table;
+
+}
+
+.info-panel-image
+{
+	height: 380px;
+    margin: 0 auto;
+    display: block;
+    background: #ccc;
+    background-position: center center;
+    background-size: cover;
+}
+
+/*.info-panels .info-panel div:first-child 
+{
+    left: 50%;
+}
+
+.info-panels .info-panel div:last-child 
+{
+    right: 50%;
+}
+*/
+
+
+
+.single-info-panel:nth-child(n+3)
+{
+	left: 50%;
+}
+
+.single-info-panel:nth-child(n+4)
+{
+	right: 50%;
+}
+
